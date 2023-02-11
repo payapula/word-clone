@@ -1,6 +1,6 @@
 import React from "react";
 
-function GuessInput() {
+function GuessInput({ addGuess }) {
   const [guess, setGuess] = React.useState("");
   return (
     <form
@@ -12,6 +12,7 @@ function GuessInput() {
         }
         setGuess("");
         console.log(guess);
+        addGuess(guess);
       }}
     >
       <label htmlFor="guess-input">Enter guess:</label>
