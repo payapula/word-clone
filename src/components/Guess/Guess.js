@@ -1,14 +1,10 @@
 import React from "react";
 import { range } from "../../utils";
 import { checkGuess } from "../..//game-helpers";
-import { sample } from "../../utils";
-import { WORDS } from "../../data";
 
-const answer = sample(WORDS);
-console.log("answer", answer);
-
-function Guess({ guess = "" }) {
+function Guess({ guess = "", answer }) {
   const result = checkGuess(guess, answer);
+
   return (
     <p className="guess">
       {range(5).map((num) => {
