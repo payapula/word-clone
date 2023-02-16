@@ -1,14 +1,14 @@
 import React from "react";
+import { range } from "../../utils";
 
-function Guess({ guess = [] }) {
-  const [a, b, c, d, e] = guess;
+function Guess({ guess = "" }) {
   return (
     <p className="guess">
-      <span className="cell">{a}</span>
-      <span className="cell">{b}</span>
-      <span className="cell">{c}</span>
-      <span className="cell">{d}</span>
-      <span className="cell">{e}</span>
+      {range(5).map((num) => (
+        <span key={num} className="cell">
+          {guess[num]}
+        </span>
+      ))}
     </p>
   );
 }
